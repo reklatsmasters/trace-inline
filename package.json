@@ -1,0 +1,23 @@
+{
+  "name": "trace-inline",
+  "version": "0.0.0",
+  "description": "A better --trace-inlining",
+  "main": "index.js",
+  "repository": "reklatsmasters/trace-inline",
+  "author": "Dmitry Tsvettsikh <me@reklatsmasters.com>",
+  "license": "MIT",
+  "dependencies": {
+    "deep-eql": "^2.0.1",
+    "execa": "^0.6.0",
+    "pkg-bin": "^1.0.0",
+    "split2": "^2.1.1",
+    "trace-inline-parse": "^1.0.0",
+    "yargs": "^6.6.0"
+  },
+  "bin": {
+    "trace-inline": "./index.js"
+  },
+  "engines": {
+    "node": ">=4"
+  }
+}
