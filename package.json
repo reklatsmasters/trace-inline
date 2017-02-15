@@ -21,5 +21,20 @@
   },
   "engines": {
     "node": ">=4"
-  }
+  },
+  "keywords": [
+    "trace",
+    "inline",
+    "inlining",
+    "debug",
+    "tools",
+    "devtools",
+    "dev",
+    "perfomance",
+    "perf",
+    "inspector",
+    "inspect",
+    "crankshaft",
+    "v8"
+  ]
 }
