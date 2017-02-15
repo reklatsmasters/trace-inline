@@ -4,13 +4,14 @@
 const execa = require('execa')
 const split2 = require('split2')
 const Tape = require('./reporters/tape')
+const Tree = require('./reporters/tree')
 const bin = require('pkg-bin')
 const pkg = require('./package.json')
 const yargs = require('yargs')
   .usage(`USAGE: ${bin(pkg)} <script>`)
-  .default('reporter', 'tape')
+  .default('reporter', 'tree')
   .alias('r', 'reporter')
-  .choices('r', ['tape'])
+  .choices('r', ['tape', 'tree', 'pass'])
   .help('h')
   .alias('h', 'help')
   .version()
@@ -24,23 +25,20 @@ if (!args._.length) {
   process.exit()
 }
 
-const reporter = choose_reporter(args.reporter)
 const cp = execa('node', ['--trace-inlining', args._[0]])
 
-cp.stdout
-  .pipe(split2())
-  .pipe(new reporter())
-  .pipe(process.stdout)
+pipe(cp.stdout, args.reporter).pipe(process.stdout)
 
 cp.stderr.pipe(process.stderr)
 
-/**
- * return reporter class by reporter name
- */
-function choose_reporter(reporter_name) {
+function pipe(from, reporter_name) {
   switch (reporter_name) {
     case 'tape':
-      return Tape
+      return from.pipe(split2()).pipe(new Tape())
+    case 'tree':
+      return from.pipe(split2()).pipe(new Tree())
+    case 'pass':
+      return from
     default:
       break
   }
