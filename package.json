@@ -7,6 +7,8 @@
   "author": "Dmitry Tsvettsikh <me@reklatsmasters.com>",
   "license": "MIT",
   "dependencies": {
+    "archy": "^1.0.0",
+    "chalk": "^1.1.3",
     "deep-eql": "^2.0.1",
     "execa": "^0.6.0",
     "pkg-bin": "^1.0.0",
