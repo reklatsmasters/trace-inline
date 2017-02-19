@@ -13,7 +13,7 @@ Options:
 ```
 ### Reporters
 
-Just pass your script as an argument and `trace-inline` will show you pretty human-readable output.
+Just pass your script as an argument and `trace-inline` will show you pretty human-readable output `trace-inline index.js`.
 
 ![tree](fixtures/tree-windows.png)
 
@@ -24,6 +24,8 @@ You can use any formatter you want to process the TAP output (`-r tape`).
 or get raw unparsed data (`-r pass`)
 
 ![pass](fixtures/pass-windows.png)
+
+You can pass an additional arguments after `--`: `trace-inline -- --harmony-tailcalls index.js`
 
 ## Related
 
