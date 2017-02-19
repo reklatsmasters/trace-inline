@@ -1,4 +1,4 @@
-## trace-inline
+## trace-inline [![npm](https://img.shields.io/npm/v/trace-inline.svg)](https://npmjs.org/package/trace-inline) [![license](https://img.shields.io/npm/l/trace-inline.svg)](https://npmjs.org/package/trace-inline) [![downloads](https://img.shields.io/npm/dm/trace-inline.svg)](https://npmjs.org/package/trace-inline)
 
 A better --trace-inlining
 
