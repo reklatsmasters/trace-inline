@@ -25,7 +25,7 @@ if (!args._.length) {
   process.exit()
 }
 
-const cp = execa('node', ['--trace-inlining', args._[0]])
+const cp = execa('node', ['--trace-inlining'].concat(args._))
 
 pipe(cp.stdout, args.reporter).pipe(process.stdout)
 
